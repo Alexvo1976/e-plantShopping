@@ -403,12 +403,14 @@ function ProductList({ onHomeClick }) {
               <div className="product-list">
                 {category.plants.map((plant, plantIndex) => (
                   <div className="product-card" key={plantIndex}>
+                    <div className="product-title">{plant.name}</div>
                     <img
                       className="product-image"
                       src={plant.image}
                       alt={plant.name}
                     />
-                    <div className="product-title">{plant.name}</div>
+                    <div className="product-price">{plant.cost}</div>
+                    <div className="product-details">{plant.description}</div>
                     {/* Display additional plant details (e.g., description, cost) here if needed */}
                     <button
                       className="product-button"
