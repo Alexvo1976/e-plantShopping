@@ -14,7 +14,9 @@ function ProductList({ onHomeClick }) {
   const cartItems = useSelector((state) => state.cart.cartItems);
 
   // Calculate the total number of items in the cart
-  const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+  const totalItems = (Array.isArray(cartItems) ? cartItems : []).reduce((sum, item) => sum + item.quantity, 0);
+
+  // const totalItems = 0;
 
   const plantsArray = [
     {
